@@ -1,5 +1,22 @@
 = Kafka Monitoring Stack for Docker Compose (Prometheus / Grafana)
 
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/kafka-monitoring-stack-docker-compose
+)
+
+#### Rappel pour retrouver les environnements éventuellement précédemment instanciés dans Gitpod : https://gitpod.io/workspaces
+[# Pour afficher les workspaces déjà instanciés si besoin de faire du ménage :](https://gitpod.io/workspaces)
+
+#### Affichage du répertoire courant dans Gitpod : 
+
+    pwd
+
+
+
+
+
+
+
 image:https://img.shields.io/badge/License-Apache%202.0-blue.svg[https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose/blob/master/LICENSE]
 image:https://img.shields.io/github/issues-raw/streamthoughts/kafka-monitoring-stack-docker-compose[GitHub issues]
 image:https://img.shields.io/github/stars/streamthoughts/kafka-monitoring-stack-docker-compose?style=social[GitHub Repo stars]
