@@ -11,7 +11,7 @@
 
 
 #### Si on veut faire ce TP (en dehors de Gitpod, sur une VM à soi par exemple) : 
-## **1. Clone the Kafka Monitoring Suite repository.**
+## **1. Clonage du repository "Kafka Monitoring" :**
 
     git clone https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose.git
     
@@ -79,7 +79,7 @@
     
     == Getting Started
 
-## **2. Start Confluent/Kafka cluster.**
+## **2. Démarrage du cluster souhaité (Confluent/Kafka) :**
 
 ### Exemple d'utilisation :
 
@@ -109,20 +109,27 @@
 
 
 
-Deploy one of the provided docker-compose stack:
+## Déploiement au choix de l'une des configurations docker-compose propsoées :
 
 _Note: Depending on your network speed, this may take few minutes to download all images._
 
 === Single Zookeeper/Kafka with Prometheus/Grafana
 
-Start/Stop with:
+### Lancement :
 
     ./zk-kafka-single-node-stack-start.sh
+    
+### Arrêt :  
+
     ./zk-kafka-single-node-stack-stop.sh
 
-### or directly
-    docker-compose -f zk-kafka-single-node-stack.yml up -d
-    docker-compose -f zk-kafka-single-node-stack.yml down
+### Ou sinon directement : 
+
+    docker compose -f zk-kafka-single-node-stack.yml up -d
+    
+  puis  
+  
+    docker compose -f zk-kafka-single-node-stack.yml down
 
 
 ## Single Zookeeper / Multiple Kafka with Prometheus/Grafana
@@ -159,7 +166,6 @@ Start/Stop with:
     docker-compose -f  zk-kafka-multiple-nodes-sasl-stack.yml down
 
 
-
 ## Full Stack (single node Kafka Cluster)
 
 ### Pour lancer :  
@@ -184,7 +190,6 @@ Start/Stop with:
 Create `demo-topic` with 6 partitions and 3 replicas.
 
 ```
-
 docker exec -it kafka101 \
 kafka-topics \
 --create \
@@ -192,7 +197,6 @@ kafka-topics \
 --replication-factor 3 \
 --topic demo-topic \
 --bootstrap-server kafka101:29092
-
 ```
 
 **4. Produce messages.**
