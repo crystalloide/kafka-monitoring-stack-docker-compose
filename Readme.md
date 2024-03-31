@@ -11,18 +11,9 @@
     pwd
 
 
-image:https://img.shields.io/badge/License-Apache%202.0-blue.svg[https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose/blob/master/LICENSE]
-
-image:https://img.shields.io/github/issues-raw/streamthoughts/kafka-monitoring-stack-docker-compose[GitHub issues]
-
-image:https://img.shields.io/github/stars/streamthoughts/kafka-monitoring-stack-docker-compose?style=social[GitHub Repo stars]
-
-:toc:
-:toc-placement!:
 
 This repository demonstrates how to use Prometheus and Grafana for monitoring an Apache Kafka cluster.
 
-toc::[]
 
 == Stack
 
