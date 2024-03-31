@@ -66,18 +66,14 @@
     zk-kafka-single-node-sasl          |	zk-kafka-single-node-sasl-stack.yml
     zk-kafka-single-node               |	zk-kafka-single-node-stack.yml
     zkless-kafka-multiple-nodes        |	zkless-kafka-multiple-nodes-stack.yml
-    ----
-    '''
     
-    === Examples
+### Exemple : 
 
-    **To deploy a Kafka Cluster (Kraft)**
-    [source, bash]
-    ----
-    $ ./up -n zkless-kafka-multiple-nodes
-    ----
-    
-    == Getting Started
+####   **Pour déployer un cluster Kafka (Kraft)**
+```
+   ./up -n zkless-kafka-multiple-nodes
+```  
+
 
 ## **2. Démarrage du cluster souhaité (Confluent/Kafka) :**
 
