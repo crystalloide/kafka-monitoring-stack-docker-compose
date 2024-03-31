@@ -1,4 +1,7 @@
-= Kafka Monitoring Stack for Docker Compose (Prometheus / Grafana)
+# Kafka Monitoring Stack for Docker Compose (Prometheus / Grafana)
+
+# Démonstration de l'utilisation de Prometheus et Grafana pour le monitoring d'un cluster Apache Kafka :
+
 
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/crystalloide/kafka-monitoring-stack-docker-compose)
@@ -12,10 +15,8 @@
 
 
 
-This repository demonstrates how to use Prometheus and Grafana for monitoring an Apache Kafka cluster.
+# Stack :
 
-
-    == Stack
     
     * Kafka (Confluent)
     * Zookeeper
