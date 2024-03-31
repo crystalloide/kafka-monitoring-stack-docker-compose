@@ -79,8 +79,35 @@
     
     == Getting Started
 
-
 ## **2. Start Confluent/Kafka cluster.**
+
+### Exemple d'utilisation :
+
+    ./up -n kraft-single-node-full 
+
+#### Et le déploiement commence :    
+
+    ✔ Network kafka-platform                                           Created                                                                                                                                                                           0.1s 
+    ✔ Container kafka101                                               Started                                                                                                                                                                           0.9s 
+    ✔ Container prometheus                                             Started                                                                                                                                                                           0.9s 
+    ✔ Container grafana                                                Started                                                                                                                                                                           0.8s 
+    ✔ Container jmx-kafka101                                           Started                                                                                                                                                                           0.9s 
+    ✔ Container kafka-schema-registry                                  Started                                                                                                                                                                           0.8s 
+    ✔ Container akhq                                                   Started                                                                                                                                                                           1.3s 
+    ✔ Container kafka-monitoring-stack-docker-compose-kafka-connect-1  Started                                                                                                                                                                           1.4s 
+
+--------------------------------------------------------------------------------
+    Grafana (Login : admin / Password : kafka) : http://localhost:3000
+    Prometheus : http://localhost:9090
+
+--------------------------------------------------------------------------------
+
+     Use the below client config properties for connecting to Kafka:
+
+	bootstrap.servers=localhost:9092
+
+
+
 
 Deploy one of the provided docker-compose stack:
 
