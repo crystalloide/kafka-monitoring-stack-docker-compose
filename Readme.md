@@ -139,71 +139,82 @@ Start/Stop with:
 
 ## Single Zookeeper/Kafka with Prometheus/Grafana (SASL/PLAINTEXT)
 
-----
+### Pour lancer : 
+
     ./zk-kafka-single-node-sasl-stack-start.sh
     
+### Puis, pour arrêter :    
+
     ./zk-kafka-single-node-sasl-stack-stop.sh
-----
+
 
 ## Single Zookeeper / Multiple Kafka with Prometheus/Grafana (SASL/PLAINTEXT)
 
-[source,bash]
-----
-$ docker-compose -f  zk-kafka-multiple-nodes-sasl-stack.yml up -d
-$ docker-compose -f  zk-kafka-multiple-nodes-sasl-stack.yml down
-----
+### Pour lancer :  
+ 
+    docker-compose -f  zk-kafka-multiple-nodes-sasl-stack.yml up -d
+ 
+### Puis, pour arrêter :  
+ 
+    docker-compose -f  zk-kafka-multiple-nodes-sasl-stack.yml down
+
+
 
 ## Full Stack (single node Kafka Cluster)
 
-Start/Stop with:
+### Pour lancer :  
 
-[source,bash]
-----
-$ ./full-single-node-stack-start.sh
-$ ./full-single-node-stack-stop.sh
+    ./full-single-node-stack-start.sh
+    
+### Puis, pour arrêter :  
+    
+    ./full-single-node-stack-stop.sh
 
-# or directly
-$ docker-compose -f  zk-kafka-single-node-full-stack.yml up -d
-$ docker-compose -f  zk-kafka-single-node-full-stack.yml down
-----
+### Ou sinon directement :
+
+### Pour lancer :  
+    docker-compose -f  zk-kafka-single-node-full-stack.yml up -d
+    
+### Puis, pour arrêter :  
+    docker-compose -f  zk-kafka-single-node-full-stack.yml down
+
 
 **3. Create Topic.**
 
 Create `demo-topic` with 6 partitions and 3 replicas.
 
-[source,bash]
-----
-$ docker exec -it kafka101 \
+```
+
+docker exec -it kafka101 \
 kafka-topics \
 --create \
 --partitions 6 \
 --replication-factor 3 \
 --topic demo-topic \
 --bootstrap-server kafka101:29092
-----
+
+```
 
 **4. Produce messages.**
 
 Open a new terminal window, generate some message to simulate producer load.
 
-[source,bash]
-----
-$ docker exec -it kafka101 \
+```
+docker exec -it kafka101 \
 kafka-producer-perf-test \
 --throughput 500 \
 --num-records 100000000 \
 --topic demo-topic \
 --record-size 100 \
 --producer-props bootstrap.servers=kafka101:29092
-----
+```
 
 **5. Consume messages.**
 
 Open a new terminal window, generate some message to simulate consumer load.
 
-[source,bash]
-----
-$ docker exec -it kafka101 \
+```
+docker exec -it kafka101 \
 kafka-consumer-perf-test \
 --messages 100000000 \
 --timeout 1000000 \
@@ -211,7 +222,7 @@ kafka-consumer-perf-test \
 --reporting-interval 1000 \
 --show-detailed-stats \
 --bootstrap-server kafka101:29092
-----
+```
 
 **6. Open Grafana.**
 
