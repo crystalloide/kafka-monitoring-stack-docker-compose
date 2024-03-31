@@ -15,72 +15,71 @@
 This repository demonstrates how to use Prometheus and Grafana for monitoring an Apache Kafka cluster.
 
 
-== Stack
+    == Stack
+    
+    * Kafka (Confluent)
+    * Zookeeper
+    * Kafka Schema Registry (Confluent)
+    * KSQLDB
+    * Kafka Connect
+    * Prometheus
+    * Grafana
+    * AKHQ (https://akhq.io/)
+    * ZooNavigator (https://zoonavigator.elkozmon.com/en/stable/)
 
-* Kafka (Confluent)
-* Zookeeper
-* Kafka Schema Registry (Confluent)
-* KSQLDB
-* Kafka Connect
-* Prometheus
-* Grafana
-* AKHQ (https://akhq.io/)
-* ZooNavigator (https://zoonavigator.elkozmon.com/en/stable/)
+    == Usage
 
-== Usage
+    [source, bash]
+    ----
+    $ ./up -h
 
-[source, bash]
-----
-$ ./up -h
+    --------------------------------------------------------------------------------
+          ____        __           _____ __                            _
+         / __ \____ _/ /_____ _   / ___// /_________  ____ _____ ___  (_)___  ____ _
+        / / / / __ `/ __/ __ `/   \__ \/ __/ ___/ _ \/ __ `/ __ `__ \/ / __ \/ __ `/
+       / /_/ / /_/ / /_/ /_/ /   ___/ / /_/ /  /  __/ /_/ / / / / / / / / / / /_/ /
+      /_____/\__,_/\__/\__,_/   /____/\__/_/   \___/\__,_/_/ /_/ /_/_/_/ /_/\__, /
+                                                                            /____/
+    
+     Powered by Apache Kafka!
+    
+    --------------------------------------------------------------------------------
+    Usage: ./up [options]
+    	 -n <[NAME]>      	: Name of the stack to deploy (required)
+    	 -s <[SERVICE]>   	: Service names to deploy (run all services if empty)
+    	 -h               	: Print this Help.
+    
+    The table below lists the available docker-compose stacks:
 
---------------------------------------------------------------------------------
-      ____        __           _____ __                            _
-     / __ \____ _/ /_____ _   / ___// /_________  ____ _____ ___  (_)___  ____ _
-    / / / / __ `/ __/ __ `/   \__ \/ __/ ___/ _ \/ __ `/ __ `__ \/ / __ \/ __ `/
-   / /_/ / /_/ / /_/ /_/ /   ___/ / /_/ /  /  __/ /_/ / / / / / / / / / / /_/ /
-  /_____/\__,_/\__/\__,_/   /____/\__/_/   \___/\__,_/_/ /_/ /_/_/_/ /_/\__, /
-                                                                        /____/
+    NAME (./up -n <NAME>)              |	FILE (docker compose -f <FILE> up -d)
+    ===================================+==================================================
+    zk-kafka-multiple-nodes-sasl       |	zk-kafka-multiple-nodes-sasl-stack.yml
+    zk-kafka-multiple-nodes            |	zk-kafka-multiple-nodes-stack.yml
+    zk-kafka-single-node-full          |	zk-kafka-single-node-full-stack.yml
+    zk-kafka-single-node-sasl          |	zk-kafka-single-node-sasl-stack.yml
+    zk-kafka-single-node               |	zk-kafka-single-node-stack.yml
+    zkless-kafka-multiple-nodes        |	zkless-kafka-multiple-nodes-stack.yml
+    ----
+    '''
+    
+    === Examples
 
- Powered by Apache Kafka!
+    **To deploy a Kafka Cluster (Kraft)**
+    [source, bash]
+    ----
+    $ ./up -n zkless-kafka-multiple-nodes
+    ----
+    
+    == Getting Started
 
---------------------------------------------------------------------------------
-Usage: ./up [options]
-	 -n <[NAME]>      	: Name of the stack to deploy (required)
-	 -s <[SERVICE]>   	: Service names to deploy (run all services if empty)
-	 -h               	: Print this Help.
+## **1. Clone the Kafka Monitoring Suite repository.**
 
-The table below lists the available docker-compose stacks:
+    git clone https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose.git
+    
+    cd kafka-monitoring-stack-docker-compose
 
-NAME (./up -n <NAME>)              |	FILE (docker compose -f <FILE> up -d)
-===================================+==================================================
-zk-kafka-multiple-nodes-sasl       |	zk-kafka-multiple-nodes-sasl-stack.yml
-zk-kafka-multiple-nodes            |	zk-kafka-multiple-nodes-stack.yml
-zk-kafka-single-node-full          |	zk-kafka-single-node-full-stack.yml
-zk-kafka-single-node-sasl          |	zk-kafka-single-node-sasl-stack.yml
-zk-kafka-single-node               |	zk-kafka-single-node-stack.yml
-zkless-kafka-multiple-nodes        |	zkless-kafka-multiple-nodes-stack.yml
-----
-'''
 
-=== Examples
-
-**To deploy a Kafka Cluster (Kraft)**
-[source, bash]
-----
-$ ./up -n zkless-kafka-multiple-nodes
-----
-
-== Getting Started
-
-**1. Clone the Kafka Monitoring Suite repository.**
-
-[source,bash]
-----
-$ git clone https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose.git
-$ cd kafka-monitoring-stack-docker-compose
-----
-
-**2. Start Confluent/Kafka cluster.**
+## **2. Start Confluent/Kafka cluster.**
 
 Deploy one of the provided docker-compose stack:
 
@@ -90,33 +89,35 @@ _Note: Depending on your network speed, this may take few minutes to download al
 
 Start/Stop with:
 
-[source,bash]
-----
-$ ./zk-kafka-single-node-stack-start.sh
-$ ./zk-kafka-single-node-stack-stop.sh
+    ./zk-kafka-single-node-stack-start.sh
+    ./zk-kafka-single-node-stack-stop.sh
 
-# or directly
-$ docker-compose -f zk-kafka-single-node-stack.yml up -d
-$ docker-compose -f zk-kafka-single-node-stack.yml down
+### or directly
+    docker-compose -f zk-kafka-single-node-stack.yml up -d
+    docker-compose -f zk-kafka-single-node-stack.yml down
+
+
+## Single Zookeeper / Multiple Kafka with Prometheus/Grafana
+
+
+### Lancement :
+
+    docker-compose -f zk-kafka-multiple-nodes-stack.yml up -d
+    
+### Arrêt :    
+
+    docker-compose -f zk-kafka-multiple-nodes-stack.yml down
+
+
+## Single Zookeeper/Kafka with Prometheus/Grafana (SASL/PLAINTEXT)
+
+----
+    ./zk-kafka-single-node-sasl-stack-start.sh
+    
+    ./zk-kafka-single-node-sasl-stack-stop.sh
 ----
 
-=== Single Zookeeper / Multiple Kafka with Prometheus/Grafana
-
-[source,bash]
-----
-$ docker-compose -f zk-kafka-multiple-nodes-stack.yml up -d
-$ docker-compose -f zk-kafka-multiple-nodes-stack.yml down
-----
-
-=== Single Zookeeper/Kafka with Prometheus/Grafana (SASL/PLAINTEXT)
-
-[source,bash]
-----
-$ ./zk-kafka-single-node-sasl-stack-start.sh
-$ ./zk-kafka-single-node-sasl-stack-stop.sh
-----
-
-=== Single Zookeeper / Multiple Kafka with Prometheus/Grafana (SASL/PLAINTEXT)
+## Single Zookeeper / Multiple Kafka with Prometheus/Grafana (SASL/PLAINTEXT)
 
 [source,bash]
 ----
@@ -124,7 +125,7 @@ $ docker-compose -f  zk-kafka-multiple-nodes-sasl-stack.yml up -d
 $ docker-compose -f  zk-kafka-multiple-nodes-sasl-stack.yml down
 ----
 
-=== Full Stack (single node Kafka Cluster)
+## Full Stack (single node Kafka Cluster)
 
 Start/Stop with:
 
