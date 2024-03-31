@@ -179,9 +179,9 @@ _Note: Depending on your network speed, this may take few minutes to download al
     docker-compose -f  zk-kafka-single-node-full-stack.yml down
 
 
-**3. Create Topic.**
+**3. Création d'un Topic : **
 
-Create `demo-topic` with 6 partitions and 3 replicas.
+Création du topic `demo-topic` avec 6 partitions et 3 replicas :
 
 ```
 docker exec -it kafka101 \
@@ -193,9 +193,9 @@ kafka-topics \
 --bootstrap-server kafka101:29092
 ```
 
-**4. Produce messages.**
+**4. Production de messages : **
 
-Open a new terminal window, generate some message to simulate producer load.
+A partir d'un noveau terminal de commande, on génère des messages pour simuler l'activité d'un prducer : 
 
 ```
 docker exec -it kafka101 \
@@ -207,9 +207,9 @@ kafka-producer-perf-test \
 --producer-props bootstrap.servers=kafka101:29092
 ```
 
-**5. Consume messages.**
+**5. Consommation de messages : **
 
-Open a new terminal window, generate some message to simulate consumer load.
+A partir d'un noveau terminal de commande, on consomme des messages pour simuler la charge d'un consumer : 
 
 ```
 docker exec -it kafka101 \
@@ -222,9 +222,9 @@ kafka-consumer-perf-test \
 --bootstrap-server kafka101:29092
 ```
 
-**6. Open Grafana.**
+**6. Visualisation dans Grafana : **
 
-Open your favorite web browser and open one of the provided Grafana dashboards :
+A partir d'un navigateur web, ouvrir l'URL pour avoir accès aux dashboards Grafan :
 
 * Kafka Cluster / Global Health Check
 
