@@ -14,9 +14,7 @@
     pwd
 
 
-
 # Stack :
-
     
     * Kafka (Confluent)
     * Zookeeper
@@ -28,12 +26,11 @@
     * AKHQ (https://akhq.io/)
     * ZooNavigator (https://zoonavigator.elkozmon.com/en/stable/)
 
-    == Usage
+### Utilisation : 
 
-    [source, bash]
-    ----
-    $ ./up -h
-
+    ./up -h
+    
+### 
     --------------------------------------------------------------------------------
           ____        __           _____ __                            _
          / __ \____ _/ /_____ _   / ___// /_________  ____ _____ ___  (_)___  ____ _
