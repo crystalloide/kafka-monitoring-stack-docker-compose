@@ -9,7 +9,15 @@
 #### Rappel :
 [# Pour afficher les workspaces déjà instanciés si besoin de faire du ménage :](https://gitpod.io/workspaces)
 
-#### Affichage du répertoire courant dans Gitpod : 
+
+#### Si on veut faire ce TP (en dehors de Gitpod, sur une VM à soi par exemple) : 
+
+    git clone https://github.com/crystalloide/kafka-monitoring-stack-docker-compose
+
+    cd kafka-monitoring-stack-docker-compose
+    
+
+#### Affichage du répertoire courant : 
 
     pwd
 
