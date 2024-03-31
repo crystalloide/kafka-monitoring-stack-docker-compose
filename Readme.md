@@ -228,18 +228,21 @@ A partir d'un navigateur web, ouvrir l'URL pour avoir accès aux dashboards Graf
 
 * Kafka Cluster / Global Health Check
 
-image:./assets/kafka-cluster-healthcheck.png[kafka-cluster-healthcheck]
+![image](https://github.com/crystalloide/kafka-monitoring-stack-docker-compose/assets/48775370/cea656df-c6b2-4ce2-849d-d352c17c4ba9)
+
 
 * Kafka Cluster / Performance
 
-image:./assets/kafka-cluster-performance.png[kafka-cluster-performance]
+![image](https://github.com/crystalloide/kafka-monitoring-stack-docker-compose/assets/48775370/0d96bca2-6206-4f52-9ab9-dbe7496debe8)
+
 
 * Kafka Cluster / Zookeeper Connections
 * Kafka Cluster / JVM & OS
 * Kafka Cluster / Hard disk usage
 * Kafka Cluster / Topic Logs
 
-image:./assets/kafka-cluster-logs.png[kafka-cluster-log]
+![image](https://github.com/crystalloide/kafka-monitoring-stack-docker-compose/assets/48775370/618b8400-46f0-4f1a-a037-79f4d4c2e9eb)
+
 
 === Accessing Grafana Web UI
 
