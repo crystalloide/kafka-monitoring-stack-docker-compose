@@ -93,15 +93,13 @@
     ✔ Container kafka-monitoring-stack-docker-compose-kafka-connect-1  Started                                                                                                                                                                           1.4s 
 
 --------------------------------------------------------------------------------
-    Grafana (Login : admin / Password : kafka) : http://localhost:3000
-    Prometheus : http://localhost:9090
-
+    Grafana (Login : admin / Password : kafka) :  http://localhost:3000
+    Prometheus :                                  http://localhost:9090
 --------------------------------------------------------------------------------
 
-     Use the below client config properties for connecting to Kafka:
+ ### Configuration du client à indiquer pour se connecter au cluster :
 
 	bootstrap.servers=localhost:9092
-
 
 
 
