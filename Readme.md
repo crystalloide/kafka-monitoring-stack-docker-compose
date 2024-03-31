@@ -11,13 +11,10 @@
     pwd
 
 
-
-
-
-
-
 image:https://img.shields.io/badge/License-Apache%202.0-blue.svg[https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose/blob/master/LICENSE]
+
 image:https://img.shields.io/github/issues-raw/streamthoughts/kafka-monitoring-stack-docker-compose[GitHub issues]
+
 image:https://img.shields.io/github/stars/streamthoughts/kafka-monitoring-stack-docker-compose?style=social[GitHub Repo stars]
 
 :toc:
@@ -72,6 +69,7 @@ zk-kafka-single-node-sasl          |	zk-kafka-single-node-sasl-stack.yml
 zk-kafka-single-node               |	zk-kafka-single-node-stack.yml
 zkless-kafka-multiple-nodes        |	zkless-kafka-multiple-nodes-stack.yml
 ----
+'''
 
 === Examples
 
