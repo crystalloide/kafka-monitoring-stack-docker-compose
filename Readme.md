@@ -11,18 +11,19 @@
 
 
 #### Si on veut faire ce TP (en dehors de Gitpod, sur une VM à soi par exemple) : 
+## **1. Clone the Kafka Monitoring Suite repository.**
 
-    git clone https://github.com/crystalloide/kafka-monitoring-stack-docker-compose
-
-    cd kafka-monitoring-stack-docker-compose
+    git clone https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose.git
     
+    cd kafka-monitoring-stack-docker-compose
+  
 
 #### Affichage du répertoire courant : 
 
     pwd
 
 
-# Stack :
+# Stack complète disponible :
     
     * Kafka (Confluent)
     * Zookeeper
@@ -77,12 +78,6 @@
     ----
     
     == Getting Started
-
-## **1. Clone the Kafka Monitoring Suite repository.**
-
-    git clone https://github.com/streamthoughts/kafka-monitoring-stack-docker-compose.git
-    
-    cd kafka-monitoring-stack-docker-compose
 
 
 ## **2. Start Confluent/Kafka cluster.**
