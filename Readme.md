@@ -224,7 +224,7 @@ kafka-consumer-perf-test \
 
 **6. Visualisation dans Grafana : **
 
-A partir d'un navigateur web, ouvrir l'URL pour avoir accès aux dashboards Grafan :
+A partir d'un navigateur web, ouvrir l'URL pour avoir accès aux dashboards Grafana : http://localhost:3000
 
 * Kafka Cluster / Global Health Check
 
